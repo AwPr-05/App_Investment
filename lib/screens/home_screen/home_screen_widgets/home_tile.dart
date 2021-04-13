@@ -16,9 +16,11 @@ class HomeTile extends StatelessWidget {
         border: Border.all(),
       ),
       child: ListTile(
+        dense: true,
         leading: Icon(
           values.icon,
           size: 40,
+          color: values.color,
         ),
         title: Text(
           values.title,

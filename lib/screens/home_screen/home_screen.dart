@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
       icon: FontAwesomeIcons.facebook,
       title: "Facebook",
       value: 100.0,
+      color: Colors.blue.shade700,
     ),
     HomeModel(
       date: "08/04/21",
@@ -20,6 +21,7 @@ class HomeScreen extends StatelessWidget {
       icon: FontAwesomeIcons.instagram,
       title: "Instagram",
       value: 300.0,
+      color: Colors.purple,
     ),
     HomeModel(
       date: "09/04/21",
@@ -27,21 +29,11 @@ class HomeScreen extends StatelessWidget {
       icon: FontAwesomeIcons.linkedin,
       title: "LinkedIn",
       value: 50.0,
+      color: Colors.blue,
     ),
   ];
 
-  /// Retorna um container icon
-  Widget createContainerIcon() {
-    return Container(
-      height: 40,
-      width: 40,
-      margin: EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        shape: BoxShape.circle,
-      ),
-    );
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -49,15 +41,7 @@ class HomeScreen extends StatelessWidget {
       // Cor de fundo
       backgroundColor: Colors.grey.shade300,
 
-      // AppBar
-      appBar: AppBar(
-        title: Text("Investment"),
-        centerTitle: true,
-        leading: createContainerIcon(),
-        actions: [
-          createContainerIcon(),
-        ],
-      ),
+      
 
       // Conteúdo
       body: ListView(
@@ -91,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "R\$ 52.555,55",
+                    "R\$ 52.500,55",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 30,

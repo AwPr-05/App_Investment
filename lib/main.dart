@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:investment/screens/home_screen/home_screen.dart';
+import 'package:investment/screens/pages_navigator/pages_navigator.dart';
 
 main(List<String> args) => runApp(MyApp());
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: HomeScreen(),
+      home: PagesNavigator(),
     );
   }
 }
