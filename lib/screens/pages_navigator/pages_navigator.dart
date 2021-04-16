@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:investment/screens/drawer/custom_drawer.dart';
 import 'package:investment/screens/home_screen/home_screen.dart';
+import 'package:investment/screens/pages_navigator/pages_navigator_widgets/drawer_tile.dart';
 
 class PagesNavigator extends StatefulWidget {
   @override
@@ -24,19 +26,26 @@ class _PagesNavigatorState extends State<PagesNavigator> {
   final pageController = PageController(initialPage: 1);
 
   int currentBottomNavIndex = 1;
+  int currentDrawerIndex = 0;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
+
       // AppBar
       appBar: AppBar(
         title: Text("Investment"),
         centerTitle: true,
-        leading: createContainerIcon(),
         actions: [
           createContainerIcon(),
         ],
       ),
+
+      // Drawer (Hamburguer)
+      drawer: CustomDrawer(scaffoldKey: scaffoldKey, pageController: pageController),
 
       // Conteúdo
       body: PageView(
@@ -46,6 +55,28 @@ class _PagesNavigatorState extends State<PagesNavigator> {
           Container(color: Colors.red),
           HomeScreen(),
           Container(color: Colors.blue),
+          Container(
+            alignment: Alignment.center,
+            color: Colors.orange.shade900,
+            child: Text(
+              "Telas Extras",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          Container(
+            alignment: Alignment.center,
+            color: Colors.green,
+            child: Text(
+              "Investimentos",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+          ),
         ],
       ),
 
