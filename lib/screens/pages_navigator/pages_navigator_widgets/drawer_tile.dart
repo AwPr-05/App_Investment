@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 
 class DrawerTile extends StatelessWidget {
   final IconData icon;
-  final String title;
   final Function onPressed;
+  final String title;
   final Color color;
 
-  DrawerTile({
+  const DrawerTile({
     @required this.icon,
-    @required this.title,
     @required this.onPressed,
+    @required this.title,
     @required this.color,
   });
 
   @override
   Widget build(BuildContext context) {
-    /// Cria um tile que sera apresentado no drawer
     return ListTile(
       onTap: onPressed,
       leading: Icon(

@@ -4,7 +4,6 @@ import 'package:investment/core/models/home_model.dart';
 import 'package:investment/screens/home_screen/home_screen_widgets/home_tile.dart';
 
 class HomeScreen extends StatelessWidget {
-
   // Lista de dados
   final List<HomeModel> dataTiles = [
     HomeModel(
@@ -33,15 +32,11 @@ class HomeScreen extends StatelessWidget {
     ),
   ];
 
- 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // Cor de fundo
       backgroundColor: Colors.grey.shade300,
-
-      
 
       // Conteúdo
       body: ListView(
@@ -75,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "R\$ 52.500,55",
+                    "R\$ 48.782,55",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 30,

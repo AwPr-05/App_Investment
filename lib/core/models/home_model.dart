@@ -8,5 +8,13 @@ class HomeModel {
   bool earn;
   Color color;
 
-  HomeModel({this.date, this.icon, this.title, this.value, this.earn, this.color});
+  HomeModel({
+    this.date,
+    this.icon,
+    this.title,
+    this.value,
+    this.earn,
+    this.color,
+  });
+  
 }

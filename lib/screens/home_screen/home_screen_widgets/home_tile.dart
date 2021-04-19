@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:investment/core/models/home_model.dart';
 
 class HomeTile extends StatelessWidget {
-  
   final HomeModel values;
 
   HomeTile(this.values);
