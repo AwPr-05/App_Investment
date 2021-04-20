@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:investment/screens/home_screen/home_screen.dart';
 import 'package:investment/screens/drawer/custom_drawer.dart';
@@ -44,7 +45,35 @@ class _PagesNavigatorState extends State<PagesNavigator> {
           child: Image.asset("assets/hamburger.png"),
         ),
         actions: [
-          createContainerIcon(),
+          GestureDetector(
+            onTap: () {
+              // Alerta no meio da tela
+              showDialog(
+                context: context,
+                builder: (context){
+                  return AlertDialog(
+                    title: Text("titulo"),
+                    content: Text("Conteudo do Dialogo"),
+                    actions: [
+                      FlatButton(onPressed: (){
+                        Navigator.of(context).pop();
+                      }, child: Text("Fechar"),),
+                    ],
+                  );
+                }
+              );
+              // Toast
+              Fluttertoast.showToast(
+                  msg: "This is Center Short Toast",
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.SNACKBAR,
+                  timeInSecForIosWeb: 3,
+                  backgroundColor: Colors.red,
+                  textColor: Colors.white,
+                  fontSize: 16.0);
+            },
+            child: createContainerIcon(),
+          ),
         ],
       ),
 
@@ -63,12 +92,12 @@ class _PagesNavigatorState extends State<PagesNavigator> {
           HomeScreen(),
           Container(color: Colors.blue),
           Container(
-            color: Colors.green,
+            color: Colors.orange.shade900,
             alignment: Alignment.center,
             child: Text(
               "Telas extras",
               style: TextStyle(
-                color: Colors.orange.shade900,
+                color: Colors.white,
                 fontSize: 20,
               ),
             ),
