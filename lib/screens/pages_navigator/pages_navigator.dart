@@ -3,6 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:investment/screens/home_screen/home_screen.dart';
 import 'package:investment/screens/drawer/custom_drawer.dart';
+import 'package:investment/screens/investment_screen/investment_screen.dart';
 
 class PagesNavigator extends StatefulWidget {
   @override
@@ -48,29 +49,29 @@ class _PagesNavigatorState extends State<PagesNavigator> {
           GestureDetector(
             onTap: () {
               // Alerta no meio da tela
-              showDialog(
-                context: context,
-                builder: (context){
-                  return AlertDialog(
-                    title: Text("titulo"),
-                    content: Text("Conteudo do Dialogo"),
-                    actions: [
-                      FlatButton(onPressed: (){
-                        Navigator.of(context).pop();
-                      }, child: Text("Fechar"),),
-                    ],
-                  );
-                }
-              );
-              // Toast
-              Fluttertoast.showToast(
-                  msg: "This is Center Short Toast",
-                  toastLength: Toast.LENGTH_SHORT,
-                  gravity: ToastGravity.SNACKBAR,
-                  timeInSecForIosWeb: 3,
-                  backgroundColor: Colors.red,
-                  textColor: Colors.white,
-                  fontSize: 16.0);
+              // showDialog(
+              //   context: context,
+              //   builder: (context){
+              //     return AlertDialog(
+              //       title: Text("titulo"),
+              //       content: Text("Conteudo do Dialogo"),
+              //       actions: [
+              //         FlatButton(onPressed: (){
+              //           Navigator.of(context).pop();
+              //         }, child: Text("Fechar"),),
+              //       ],
+              //     );
+              //   }
+              // );
+              // // Toast
+              // Fluttertoast.showToast(
+              //     msg: "This is Center Short Toast",
+              //     toastLength: Toast.LENGTH_SHORT,
+              //     gravity: ToastGravity.SNACKBAR,
+              //     timeInSecForIosWeb: 3,
+              //     backgroundColor: Colors.red,
+              //     textColor: Colors.white,
+              //     fontSize: 16.0);
             },
             child: createContainerIcon(),
           ),
@@ -88,7 +89,7 @@ class _PagesNavigatorState extends State<PagesNavigator> {
         controller: pageController,
         physics: NeverScrollableScrollPhysics(),
         children: [
-          Container(color: Colors.red),
+          InvestmentScreen(),
           HomeScreen(),
           Container(color: Colors.blue),
           Container(
@@ -117,7 +118,7 @@ class _PagesNavigatorState extends State<PagesNavigator> {
       ),
 
       // Bottom Navigation Bar
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar( 
         backgroundColor: Colors.purple,
         currentIndex: currentBottomNavIndex,
         selectedItemColor: Colors.white,
