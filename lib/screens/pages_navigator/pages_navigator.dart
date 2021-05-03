@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:investment/screens/home_screen/home_screen.dart';
 import 'package:investment/screens/drawer/custom_drawer.dart';
 import 'package:investment/screens/investment_screen/investment_screen.dart';
+import 'package:investment/screens/news_screen/news_screen.dart';
 
 class PagesNavigator extends StatefulWidget {
   @override
@@ -91,7 +92,7 @@ class _PagesNavigatorState extends State<PagesNavigator> {
         children: [
           InvestmentScreen(),
           HomeScreen(),
-          Container(color: Colors.blue),
+          NewsScreen(),
           Container(
             color: Colors.orange.shade900,
             alignment: Alignment.center,
@@ -138,8 +139,8 @@ class _PagesNavigatorState extends State<PagesNavigator> {
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.history),
-            label: "Histórico",
+            icon: Icon(FontAwesomeIcons.info),
+            label: "Noticias",
           ),
         ],
       ),
