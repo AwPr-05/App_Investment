@@ -30,11 +30,16 @@ class _InvestmentScreenState extends State<InvestmentScreen> {
         date: "20/04/2021",
         monthQuantity: 5,
         investmentValue: 700000),
+    InvestmentModel(
+        name: "Pedro Ruas",
+        company: "Amazon",
+        date: "20/04/2021",
+        monthQuantity: 5,
+        investmentValue: 700000),
   ];
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: Colors.grey.shade300,

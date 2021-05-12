@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:investment/screens/home_screen/home_screen.dart';
 import 'package:investment/screens/drawer/custom_drawer.dart';
@@ -13,7 +12,7 @@ class PagesNavigator extends StatefulWidget {
 
 class _PagesNavigatorState extends State<PagesNavigator> {
   /// Retorna um container icon
-  Widget createContainerIcon() {
+  Widget createContainerIcon({Image image}) {
     return Container(
       height: 40,
       width: 40,
@@ -22,6 +21,7 @@ class _PagesNavigatorState extends State<PagesNavigator> {
         color: Colors.white,
         shape: BoxShape.circle,
       ),
+      child: image,
     );
   }
 
@@ -50,20 +50,20 @@ class _PagesNavigatorState extends State<PagesNavigator> {
           GestureDetector(
             onTap: () {
               // Alerta no meio da tela
-              // showDialog(
-              //   context: context,
-              //   builder: (context){
-              //     return AlertDialog(
-              //       title: Text("titulo"),
-              //       content: Text("Conteudo do Dialogo"),
-              //       actions: [
-              //         FlatButton(onPressed: (){
-              //           Navigator.of(context).pop();
-              //         }, child: Text("Fechar"),),
-              //       ],
-              //     );
-              //   }
-              // );
+              showDialog(
+                context: context,
+                builder: (context){
+                  return AlertDialog(
+                    title: Text("Nubank Falseta", style: TextStyle(color: Colors.purple),),
+                    content: Text("Seja bem vindo ao Nubank Falseta!!!"),
+                    actions: [
+                      FlatButton(onPressed: (){
+                        Navigator.of(context).pop();
+                      }, child: Text("Fechar"),),
+                    ],
+                  );
+                }
+              );
               // // Toast
               // Fluttertoast.showToast(
               //     msg: "This is Center Short Toast",
@@ -74,7 +74,7 @@ class _PagesNavigatorState extends State<PagesNavigator> {
               //     textColor: Colors.white,
               //     fontSize: 16.0);
             },
-            child: createContainerIcon(),
+            child: createContainerIcon(image: Image.asset("assets/nuBankBall.png"), ),
           ),
         ],
       ),
@@ -129,6 +129,8 @@ class _PagesNavigatorState extends State<PagesNavigator> {
             pageController.jumpToPage(index);
           });
         },
+
+        
         items: [
           BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.moneyBillWave),
